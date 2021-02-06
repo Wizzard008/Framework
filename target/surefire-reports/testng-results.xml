@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Surefire suite" duration-ms="45746" started-at="2021-02-07T04:24:33 YEKT" finished-at="2021-02-07T04:25:19 YEKT">
+    <groups>
+    </groups>
+    <test name="Surefire test" duration-ms="45746" started-at="2021-02-07T04:24:33 YEKT" finished-at="2021-02-07T04:25:19 YEKT">
+      <class name="com.epam.automation.Tests.CloudGoogleDotComTests">
+        <test-method status="PASS" signature="resetBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@490ab905]" name="resetBrowser" is-config="true" duration-ms="36809" started-at="2021-02-07T04:24:33 YEKT" finished-at="2021-02-07T04:25:10 YEKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resetBrowser -->
+        <test-method status="PASS" signature="checkMonthlyPayment()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@490ab905]" name="checkMonthlyPayment" duration-ms="8265" started-at="2021-02-07T04:25:10 YEKT" description="Test for https://cloud.google.com/" finished-at="2021-02-07T04:25:18 YEKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkMonthlyPayment -->
+        <test-method status="PASS" signature="quiteBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@490ab905]" name="quiteBrowser" is-config="true" duration-ms="640" started-at="2021-02-07T04:25:18 YEKT" finished-at="2021-02-07T04:25:19 YEKT">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- quiteBrowser -->
+      </class> <!-- com.epam.automation.Tests.CloudGoogleDotComTests -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
