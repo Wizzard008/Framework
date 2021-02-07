@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class CloudGoogleDotComTests extends CommonConditions {
+public class CloudGoogleDotComEstimateFormFieldsTest extends CommonConditions {
 
     private CloudGoogleDotComPageObject webPage;
     @Test(description = "Test for https://cloud.google.com/")
@@ -27,37 +27,5 @@ public class CloudGoogleDotComTests extends CommonConditions {
         Assert.assertTrue(checkVMClass&checkInstanceType&checkRegion&checkLocalSSD&checkCommitmentTerm
                 ,"Estimate form values differ from expected!");
     }
-
-    @Test(description = "Test for https://cloud.google.com/")
-    public  void checkMonthlyPaymentFromForm() {
-        webPage=new CloudGoogleDotComPageObject(driver)
-                .openPage()
-                .submitSearchRequest()
-                .openRequestedSearchResult()
-                .fillEstimateFormFields()
-                .submitAddToEstimate();
-
-        Assert.assertEquals(webPage.getTotalEstimatedCost(), 1082.77, 0.0
-                , "Monthly payment value differ from expected!");
-    }
-
-
-    @Test(description = "Test for https://cloud.google.com/")
-    public  void checkMonthlyPaymentFromEmail() {
-        webPage=new CloudGoogleDotComPageObject(driver)
-                .openPage()
-                .submitSearchRequest()
-                .openRequestedSearchResult()
-                .fillEstimateFormFields()
-                .submitAddToEstimate()
-                .clickEmailEstimate()
-                .generateTemporaryEmail()
-                .fillEmailEstimateForm()
-                .clickSendEmail();
-        Assert.assertEquals(webPage.getTotalEstimatedCostFromEmail(), 1082, 1.0
-                , "Monthly payment value differ from expected!");
-    }
-
-
 
 }
