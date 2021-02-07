@@ -1,5 +1,7 @@
 package com.epam.automation.PageObject;
 
+import com.epam.automation.model.User;
+import com.epam.automation.service.UserCreator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +19,8 @@ public class CloudGoogleDotComPageObject {
     private static final String HOMEPAGE_URL="https://cloud.google.com/";
     private final int WAIT_TIMEOUT_SECONDS=30;
     private TenMinutesEmailDotComPageObject mailBoxWebPage;
-    private String emailAddress="";
+
+    private User currentUser;
 
     @FindBy(xpath = "//form[@class='devsite-search-form']")
     WebElement searchButton;
@@ -32,6 +35,7 @@ public class CloudGoogleDotComPageObject {
     public CloudGoogleDotComPageObject(WebDriver driver){
         this.driver=driver;
         PageFactory.initElements(driver,this);
+        currentUser= UserCreator.generateUserWithDefaultProperties();
     }
     public CloudGoogleDotComPageObject submitSearchRequest(){
         searchButton.click();
@@ -173,22 +177,22 @@ public class CloudGoogleDotComPageObject {
     public CloudGoogleDotComPageObject fillEmailEstimateForm(){
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//input[contains(@ng-model,'user.firstname')]")))
-                .sendKeys("testUser_Name");
+                .sendKeys(currentUser.getName());
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//input[contains(@ng-model,'user.lastname')]")))
-                .sendKeys("testUser_Surname");
+                .sendKeys(currentUser.getSurname());
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//input[contains(@ng-model,'user.email')]")))
-                .sendKeys(emailAddress);
+                .sendKeys(currentUser.getEmailAddress());
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//input[contains(@ng-model,'projectName')]")))
-                .sendKeys("TestAutomationTraining");
+                .sendKeys(currentUser.getCompany());
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//input[contains(@ng-model,'user.title')]")))
-                .sendKeys("TestAutomationEngineer");
+                .sendKeys(currentUser.getTitle());
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//input[contains(@ng-model,'user.company')]")))
-                .sendKeys("testCompany_Name");
+                .sendKeys(currentUser.getCompany());
         return this;
     }
     public CloudGoogleDotComPageObject clickSendEmail(){
@@ -201,7 +205,7 @@ public class CloudGoogleDotComPageObject {
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
         mailBoxWebPage=new TenMinutesEmailDotComPageObject(driver);
-        emailAddress = mailBoxWebPage.openPage().getEmailAddress();
+        currentUser.setEmailAddress(mailBoxWebPage.openPage().getEmailAddress());
         driver.switchTo().window(tabs.get(0));
         selectCalculatorFrame();
         return this;

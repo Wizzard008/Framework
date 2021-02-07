@@ -1,6 +1,8 @@
+com\epam\automation\model\User.class
 com\epam\automation\Tests\CloudGoogleDotComTests.class
 com\epam\automation\PageObject\CloudGoogleDotComPageObject.class
 com\epam\automation\driver\DriverSingleton.class
+com\epam\automation\service\UserCreator.class
 com\epam\automation\Tests\CommonConditions.class
 com\epam\automation\Util\CustomConditions$1.class
 com\epam\automation\Util\CustomConditions.class
