@@ -7,16 +7,16 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.epam.automation.Util.CustomConditionsScriptsExecutionCompleted;
 
-public class TenMinutesEmailDotComPageObject {
-    private WebDriver driver;
+public class TenMinutesEmailDotComPageObject extends AbstractPage{
+
     private static final String HOMEPAGE_URL="https://10minutemail.com/";
-    private final int WAIT_TIMEOUT_SECONDS=10;
     private final int MAILBOX_LIFE_CYCLE=10*60;
 
-
-    public TenMinutesEmailDotComPageObject(WebDriver driver){
-        this.driver=driver;
+    protected TenMinutesEmailDotComPageObject(WebDriver driver) {
+        super(driver);
     }
+
+
     public TenMinutesEmailDotComPageObject openPage(){
         driver.get(HOMEPAGE_URL);
         return this;

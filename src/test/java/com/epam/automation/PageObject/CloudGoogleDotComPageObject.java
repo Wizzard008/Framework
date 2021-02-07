@@ -14,12 +14,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CloudGoogleDotComPageObject {
-    private WebDriver driver;
-    private static final String HOMEPAGE_URL="https://cloud.google.com/";
-    private final int WAIT_TIMEOUT_SECONDS=30;
-    private TenMinutesEmailDotComPageObject mailBoxWebPage;
+public class CloudGoogleDotComPageObject extends AbstractPage{
 
+    private static final String HOMEPAGE_URL="https://cloud.google.com/";
+    private TenMinutesEmailDotComPageObject mailBoxWebPage;
     private User currentUser;
 
     @FindBy(xpath = "//form[@class='devsite-search-form']")
@@ -33,7 +31,7 @@ public class CloudGoogleDotComPageObject {
     WebElement iFrame;
 
     public CloudGoogleDotComPageObject(WebDriver driver){
-        this.driver=driver;
+        super(driver);
         PageFactory.initElements(driver,this);
         currentUser= UserCreator.generateUserWithDefaultProperties();
     }
