@@ -1,4 +1,14 @@
 -------------------------------------------------------------------------------
 Test set: com.epam.automation.Tests.CloudGoogleDotComTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 49.394 s - in com.epam.automation.Tests.CloudGoogleDotComTests
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 127.066 s <<< FAILURE! - in com.epam.automation.Tests.CloudGoogleDotComTests
+checkMonthlyPaymentFromEmail(com.epam.automation.Tests.CloudGoogleDotComTests)  Time elapsed: 63.594 s  <<< FAILURE!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for element to be clickable: By.xpath: //input[contains(@ng-model,'user.firstname')] (tried for 30 second(s) with 500 milliseconds interval)
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-4G432R1', ip: '10.103.36.204', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\remote\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: d93ef50773f66cab281ba3fcd91c2454
+	at com.epam.automation.Tests.CloudGoogleDotComTests.checkMonthlyPaymentFromEmail(CloudGoogleDotComTests.java:60)
+
