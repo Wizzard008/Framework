@@ -1,0 +1,8 @@
+com\epam\automation\Tests\CloudGoogleDotComTests.class
+com\epam\automation\PageObject\CloudGoogleDotComPageObject.class
+com\epam\automation\driver\DriverSingleton.class
+com\epam\automation\Tests\CommonConditions.class
+com\epam\automation\Util\CustomConditions$1.class
+com\epam\automation\Util\CustomConditions.class
+com\epam\automation\Util\ClipboardReader.class
+com\epam\automation\PageObject\TenMinutesEmailDotComPageObject.class
