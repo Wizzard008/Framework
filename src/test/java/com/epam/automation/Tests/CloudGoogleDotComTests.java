@@ -1,17 +1,12 @@
 package com.epam.automation.Tests;
 
 import com.epam.automation.PageObject.CloudGoogleDotComPageObject;
-import com.epam.automation.driver.DriverSingleton;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class CloudGoogleDotComTests extends CommonConditions{
+public class CloudGoogleDotComTests extends CommonConditions {
 
     private CloudGoogleDotComPageObject webPage;
     @Test(description = "Test for https://cloud.google.com/")

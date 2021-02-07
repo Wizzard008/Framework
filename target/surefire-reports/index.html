@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button class="button" id="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Surefire_suite">
-              <span class="suite-name border-failed">Surefire suite</span>
+              <span class="suite-name border-passed">Surefire suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,21 +93,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Surefire_suite" class="hide-methods failed suite-Surefire_suite"> (hide)</a> <!-- hide-methods failed suite-Surefire_suite -->
-                      <a href="#" panel-name="suite-Surefire_suite" class="show-methods failed suite-Surefire_suite"> (show)</a> <!-- show-methods failed suite-Surefire_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Surefire_suite">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.epam.automation.Tests.CloudGoogleDotComTests" hash-for-method="checkMonthlyPaymentFromEmail">checkMonthlyPaymentFromEmail</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Surefire_suite -->
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -119,6 +105,11 @@
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.epam.automation.Tests.CloudGoogleDotComTests" hash-for-method="checkEstimateFields">checkEstimateFields</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Surefire_suite" title="com.epam.automation.Tests.CloudGoogleDotComTests" hash-for-method="checkMonthlyPaymentFromEmail">checkMonthlyPaymentFromEmail</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -138,36 +129,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Surefire_suite" class="panel Surefire_suite">
-          <div class="suite-Surefire_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.epam.automation.Tests.CloudGoogleDotComTests</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkMonthlyPaymentFromEmail">
-                  </a> <!-- checkMonthlyPaymentFromEmail -->
-                  <span class="method-name">checkMonthlyPaymentFromEmail</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[contains(@ng-model,&apos;user.firstname&apos;)] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;DESKTOP-4G432R1&apos;, ip: &apos;10.103.36.204&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_271&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\remote\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d93ef50773f66cab281ba3fcd91c2454
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-	at com.epam.automation.PageObject.CloudGoogleDotComPageObject.fillEmailEstimateForm(CloudGoogleDotComPageObject.java:178)
-	at com.epam.automation.Tests.CloudGoogleDotComTests.checkMonthlyPaymentFromEmail(CloudGoogleDotComTests.java:60)
-	at java.util.ArrayList.forEach(ArrayList.java:1259)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                  <em>
-(Test for https://cloud.google.com/)                  </em>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Surefire_suite-class-failed -->
           <div class="suite-Surefire_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -179,6 +140,15 @@ Session ID: d93ef50773f66cab281ba3fcd91c2454
                   <a name="checkEstimateFields">
                   </a> <!-- checkEstimateFields -->
                   <span class="method-name">checkEstimateFields</span>
+                  <em>
+(Test for https://cloud.google.com/)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkMonthlyPaymentFromEmail">
+                  </a> <!-- checkMonthlyPaymentFromEmail -->
+                  <span class="method-name">checkMonthlyPaymentFromEmail</span>
                   <em>
 (Test for https://cloud.google.com/)                  </em>
                 </div> <!-- method-content -->
@@ -249,15 +219,15 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkMonthlyPaymentFromEmail')
 data.setCell(0, 2, 'com.epam.automation.Tests.CloudGoogleDotComTests')
-data.setCell(0, 3, 63575);
+data.setCell(0, 3, 42222);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'checkEstimateFields')
 data.setCell(1, 2, 'com.epam.automation.Tests.CloudGoogleDotComTests')
-data.setCell(1, 3, 28819);
+data.setCell(1, 3, 27696);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'checkMonthlyPaymentFromForm')
 data.setCell(2, 2, 'com.epam.automation.Tests.CloudGoogleDotComTests')
-data.setCell(2, 3, 27080);
+data.setCell(2, 3, 26829);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
@@ -295,37 +265,35 @@ return data;
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkEstimateFields</span>
-                <span class="method-start">2061 ms</span>
+                <span class="method-start">2066 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">stopBrowser</span>
-                <span class="method-start">30881 ms</span>
+                <span class="method-start">29763 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">31520 ms</span>
+                <span class="method-start">30398 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">checkMonthlyPaymentFromEmail</span>
-                <span class="method-start">33089 ms</span>
+                <span class="method-start">31984 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">stopBrowser</span>
-                <span class="method-start">96682 ms</span>
+                <span class="method-start">74206 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">97336 ms</span>
+                <span class="method-start">74862 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkMonthlyPaymentFromForm</span>
-                <span class="method-start">98853 ms</span>
+                <span class="method-start">76231 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">stopBrowser</span>
-                <span class="method-start">125933 ms</span>
+                <span class="method-start">103060 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

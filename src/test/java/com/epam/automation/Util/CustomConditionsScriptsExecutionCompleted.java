@@ -4,7 +4,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 
-public class CustomConditions {
+public class CustomConditionsScriptsExecutionCompleted {
     public static ExpectedCondition<Boolean> jQueryAJAXsCompleted(){
         return new ExpectedCondition<Boolean>() {
 

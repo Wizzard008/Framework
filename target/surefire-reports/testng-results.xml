@@ -1,101 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Surefire suite" duration-ms="126584" started-at="2021-02-07T12:29:12 YEKT" finished-at="2021-02-07T12:31:19 YEKT">
+  <suite name="Surefire suite" duration-ms="103710" started-at="2021-02-07T13:24:23 YEKT" finished-at="2021-02-07T13:26:07 YEKT">
     <groups>
     </groups>
-    <test name="Surefire test" duration-ms="126584" started-at="2021-02-07T12:29:12 YEKT" finished-at="2021-02-07T12:31:19 YEKT">
+    <test name="Surefire test" duration-ms="103710" started-at="2021-02-07T13:24:23 YEKT" finished-at="2021-02-07T13:26:07 YEKT">
       <class name="com.epam.automation.Tests.CloudGoogleDotComTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="setUp" is-config="true" duration-ms="2060" started-at="2021-02-07T12:29:12 YEKT" finished-at="2021-02-07T12:29:14 YEKT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="setUp" is-config="true" duration-ms="2065" started-at="2021-02-07T13:24:23 YEKT" finished-at="2021-02-07T13:24:25 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="checkEstimateFields()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="checkEstimateFields" duration-ms="28819" started-at="2021-02-07T12:29:14 YEKT" description="Test for https://cloud.google.com/" finished-at="2021-02-07T12:29:43 YEKT">
+        <test-method status="PASS" signature="checkEstimateFields()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="checkEstimateFields" duration-ms="27696" started-at="2021-02-07T13:24:25 YEKT" description="Test for https://cloud.google.com/" finished-at="2021-02-07T13:24:53 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkEstimateFields -->
-        <test-method status="PASS" signature="stopBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="stopBrowser" is-config="true" duration-ms="638" started-at="2021-02-07T12:29:43 YEKT" finished-at="2021-02-07T12:29:44 YEKT">
+        <test-method status="PASS" signature="stopBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="stopBrowser" is-config="true" duration-ms="634" started-at="2021-02-07T13:24:53 YEKT" finished-at="2021-02-07T13:24:54 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="setUp" is-config="true" duration-ms="1568" started-at="2021-02-07T12:29:44 YEKT" finished-at="2021-02-07T12:29:45 YEKT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="setUp" is-config="true" duration-ms="1586" started-at="2021-02-07T13:24:54 YEKT" finished-at="2021-02-07T13:24:55 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="checkMonthlyPaymentFromEmail()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="checkMonthlyPaymentFromEmail" duration-ms="63575" started-at="2021-02-07T12:29:45 YEKT" description="Test for https://cloud.google.com/" finished-at="2021-02-07T12:30:49 YEKT">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //input[contains(@ng-model,'user.firstname')] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-4G432R1', ip: '10.103.36.204', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\remote\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d93ef50773f66cab281ba3fcd91c2454]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //input[contains(@ng-model,'user.firstname')] (tried for 30 second(s) with 500 milliseconds interval)
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'DESKTOP-4G432R1', ip: '10.103.36.204', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_271'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 88.0.4324.146, chrome: {chromedriverVersion: 88.0.4324.96 (68dba2d8a0b14..., userDataDir: C:\Users\remote\AppData\Loc...}, goog:chromeOptions: {debuggerAddress: localhost:63146}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: d93ef50773f66cab281ba3fcd91c2454
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:95)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:272)
-at com.epam.automation.PageObject.CloudGoogleDotComPageObject.fillEmailEstimateForm(CloudGoogleDotComPageObject.java:178)
-at com.epam.automation.Tests.CloudGoogleDotComTests.checkMonthlyPaymentFromEmail(CloudGoogleDotComTests.java:60)
-at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.lang.reflect.Method.invoke(Method.java:498)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
-at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:599)
-at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:174)
-at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
-at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:822)
-at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:147)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.util.ArrayList.forEach(ArrayList.java:1259)
-at org.testng.TestRunner.privateRun(TestRunner.java:764)
-at org.testng.TestRunner.run(TestRunner.java:585)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
-at org.testng.SuiteRunner.run(SuiteRunner.java:286)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
-at org.testng.TestNG.runSuites(TestNG.java:1069)
-at org.testng.TestNG.run(TestNG.java:1037)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:135)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeSingleClass(TestNGDirectoryTestSuite.java:112)
-at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:146)
-at org.apache.maven.surefire.booter.ForkedBooter.invokeProviderInSameClassLoader(ForkedBooter.java:384)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:345)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:126)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:418)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method status="PASS" signature="checkMonthlyPaymentFromEmail()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="checkMonthlyPaymentFromEmail" duration-ms="42222" started-at="2021-02-07T13:24:55 YEKT" description="Test for https://cloud.google.com/" finished-at="2021-02-07T13:25:37 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkMonthlyPaymentFromEmail -->
-        <test-method status="PASS" signature="stopBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="stopBrowser" is-config="true" duration-ms="653" started-at="2021-02-07T12:30:49 YEKT" finished-at="2021-02-07T12:30:50 YEKT">
+        <test-method status="PASS" signature="stopBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="stopBrowser" is-config="true" duration-ms="656" started-at="2021-02-07T13:25:37 YEKT" finished-at="2021-02-07T13:25:38 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="setUp" is-config="true" duration-ms="1517" started-at="2021-02-07T12:30:50 YEKT" finished-at="2021-02-07T12:30:51 YEKT">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="setUp" is-config="true" duration-ms="1368" started-at="2021-02-07T13:25:38 YEKT" finished-at="2021-02-07T13:25:39 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="checkMonthlyPaymentFromForm()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="checkMonthlyPaymentFromForm" duration-ms="27080" started-at="2021-02-07T12:30:51 YEKT" description="Test for https://cloud.google.com/" finished-at="2021-02-07T12:31:18 YEKT">
+        <test-method status="PASS" signature="checkMonthlyPaymentFromForm()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="checkMonthlyPaymentFromForm" duration-ms="26829" started-at="2021-02-07T13:25:39 YEKT" description="Test for https://cloud.google.com/" finished-at="2021-02-07T13:26:06 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkMonthlyPaymentFromForm -->
-        <test-method status="PASS" signature="stopBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="stopBrowser" is-config="true" duration-ms="622" started-at="2021-02-07T12:31:18 YEKT" finished-at="2021-02-07T12:31:19 YEKT">
+        <test-method status="PASS" signature="stopBrowser()[pri:0, instance:com.epam.automation.Tests.CloudGoogleDotComTests@5bcab519]" name="stopBrowser" is-config="true" duration-ms="622" started-at="2021-02-07T13:26:06 YEKT" finished-at="2021-02-07T13:26:07 YEKT">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- stopBrowser -->

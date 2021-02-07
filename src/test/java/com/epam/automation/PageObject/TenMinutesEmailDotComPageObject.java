@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.epam.automation.Util.CustomConditions;
+import com.epam.automation.Util.CustomConditionsScriptsExecutionCompleted;
 
 public class TenMinutesEmailDotComPageObject {
     private WebDriver driver;
     private static final String HOMEPAGE_URL="https://10minutemail.com/";
-    private final int WAIT_TIMEOUT_SECONDS=30;
+    private final int WAIT_TIMEOUT_SECONDS=10;
     private final int MAILBOX_LIFE_CYCLE=10*60;
 
 
@@ -23,9 +23,13 @@ public class TenMinutesEmailDotComPageObject {
     }
     public String getEmailAddress(){
         ClipboardReader.cleanClipboard();
-        new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(CustomConditions.jQueryAJAXsCompleted());
-        new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
-                .elementToBeClickable(By.xpath("//div[@id='copy_address']"))).click();
+        new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(CustomConditionsScriptsExecutionCompleted.jQueryAJAXsCompleted());
+
+        do {
+            new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
+                    .elementToBeClickable(By.xpath("//div[@id='copy_address']"))).click();
+        }while (!ClipboardReader.getLineFromClipboard().contains("@"));
+
         return ClipboardReader.getLineFromClipboard();
     }
 
