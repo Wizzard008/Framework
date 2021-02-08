@@ -2,10 +2,7 @@ package com.epam.automation.PageObject;
 
 import com.epam.automation.model.User;
 import com.epam.automation.service.UserCreator;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -37,7 +34,8 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
     }
     public CloudGoogleDotComPageObject submitSearchRequest(){
         searchButton.click();
-        searchInputField.sendKeys("Google Cloud Platform Pricing Calculator\n");
+        searchInputField.sendKeys("Google Cloud Platform Pricing Calculator");
+        searchInputField.sendKeys(Keys.ENTER);
         return this;
     }
 
