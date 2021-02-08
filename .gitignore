@@ -11,3 +11,6 @@ test-output/
 # Idea
 .idea/
 *.iml
+
+#Exec files
+*.bat
