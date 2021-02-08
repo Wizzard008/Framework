@@ -1,4 +1,4 @@
-package com.epam.automation.Util;
+package com.epam.automation.PageObject;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
