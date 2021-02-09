@@ -219,28 +219,18 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         return mailBoxWebPage.waitAndOpenInboxMail().getTotalEstimatedCost();
     }
     public Boolean checkVMClass(){
-        System.out.println(getEstimateFormValues().get(1));
-        System.out.println(googleCloud.getVmClass());
         return getEstimateFormValues().get(1).equalsIgnoreCase(googleCloud.getVmClass());
     }
     public Boolean checkInstanceType(){
-        System.out.println(getEstimateFormValues().get(2));
-        System.out.println(googleCloud.getInstanceType());
         return getEstimateFormValues().get(2).equalsIgnoreCase(googleCloud.getInstanceType());
     }
     public Boolean checkRegion(){
-        System.out.println(getEstimateFormValues().get(3));
-        System.out.println(googleCloud.getDataCenterLocation());
         return getEstimateFormValues().get(3).equalsIgnoreCase(googleCloud.getDataCenterLocation());
     }
     public Boolean checkLocalSSD(){
-        System.out.println(getEstimateFormValues().get(4));
-        System.out.println(googleCloud.getLocalSSD());
         return getEstimateFormValues().get(4).equalsIgnoreCase(googleCloud.getLocalSSD());
     }
     public Boolean checkCommitmentTerm(){
-        System.out.println(getEstimateFormValues().get(5));
-        System.out.println(googleCloud.getCommittedUsage());
         return getEstimateFormValues().get(5).equalsIgnoreCase(googleCloud.getCommittedUsage());
     }
     public Boolean checkEstimateFormFields(){
