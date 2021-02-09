@@ -69,6 +69,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//input[@id='input_63' and @name='quantity']")))
                 .sendKeys(googleCloud.getNumberOfInstancesLocator());
+        logger.info("Number of instances set to: "+googleCloud.getNumberOfInstances());
 
         //What are these instances for?: оставить пустым
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
@@ -85,6 +86,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
                 .elementToBeClickable(By.id("select_80"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(googleCloud.getVmClassLocator())).click();
+        logger.info("Number of instances set to: "+googleCloud.getNumberOfInstances());
 
         //Instance type: n1
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
@@ -97,6 +99,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
                 .elementToBeClickable(By.id("select_90"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(googleCloud.getInstanceTypeLocator())).click();
+        logger.info("Instance type set to: "+googleCloud.getInstanceType());
 
         //Выбрать Add GPUs
         WebElement addGPUCheckBox=new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
@@ -122,18 +125,21 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
                 .elementToBeClickable(By.xpath("//md-select[contains(@aria-label,'Local SSD')]"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(googleCloud.getLocalSSDLocator())).click();
+        logger.info("Amount of local SSD set to: "+googleCloud.getLocalSSD());
 
         //Datacenter location: Frankfurt (europe-west3)
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//md-select[contains(@aria-label,'Datacenter')]"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(googleCloud.getDataCenterLocationLocator())).click();
+        logger.info("Datacenter location set to: "+googleCloud.getDataCenterLocation());
 
         //Committed usage: 1 Year
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//md-select[contains(@aria-label,'Committed usage')]"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(googleCloud.getCommittedUsageLocator())).click();
+        logger.info("Committed usage set to: "+googleCloud.getCommittedUsage());
 
         return this;
     }
@@ -219,18 +225,23 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         return mailBoxWebPage.waitAndOpenInboxMail().getTotalEstimatedCost();
     }
     public Boolean checkVMClass(){
+        logger.info("VM class returned: "+getEstimateFormValues().get(1));
         return getEstimateFormValues().get(1).equalsIgnoreCase(googleCloud.getVmClass());
     }
     public Boolean checkInstanceType(){
+        logger.info("Instance type returned: "+getEstimateFormValues().get(2));
         return getEstimateFormValues().get(2).equalsIgnoreCase(googleCloud.getInstanceType());
     }
     public Boolean checkRegion(){
+        logger.info("Datacenter location returned: "+getEstimateFormValues().get(3));
         return getEstimateFormValues().get(3).equalsIgnoreCase(googleCloud.getDataCenterLocation());
     }
     public Boolean checkLocalSSD(){
+        logger.info("Amount of local SSD returned: "+getEstimateFormValues().get(4));
         return getEstimateFormValues().get(4).equalsIgnoreCase(googleCloud.getLocalSSD());
     }
     public Boolean checkCommitmentTerm(){
+        logger.info("Committed usage returned: "+getEstimateFormValues().get(5));
         return getEstimateFormValues().get(5).equalsIgnoreCase(googleCloud.getCommittedUsage());
     }
     public Boolean checkEstimateFormFields(){
