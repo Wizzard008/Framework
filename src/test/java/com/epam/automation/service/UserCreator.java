@@ -10,7 +10,7 @@ public class UserCreator {
     public static final String TITLE = "testdata.title";
     public static final String COMPANY = "testdata.company";
 
-    public static User generateUserWithDefaultProperties(){
+    public static User generateUserWithProperties(){
         return new User(
                 TestDataReader.getTestData(USER_NAME),
                 TestDataReader.getTestData(USER_SURNAME),
@@ -19,13 +19,5 @@ public class UserCreator {
                 TestDataReader.getTestData(TITLE),
                 TestDataReader.getTestData(COMPANY)
         );
-//        return new User(
-//                USER_NAME,
-//                USER_SURNAME,
-//                EMAIL_ADDRESS,
-//                PROJECT,
-//                TITLE,
-//                COMPANY
-//        );
     }
 }

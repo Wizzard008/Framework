@@ -1,8 +1,11 @@
 package com.epam.automation.PageObject;
 
+import com.epam.automation.model.GoogleCloud;
 import com.epam.automation.model.User;
+import com.epam.automation.service.CloudCreator;
 import com.epam.automation.service.UserCreator;
 import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,6 +19,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
     private static final String HOMEPAGE_URL="https://cloud.google.com/";
     private TenMinutesEmailDotComPageObject mailBoxWebPage;
     private User currentUser;
+    private GoogleCloud googleCloud;
 
     @FindBy(xpath = "//form[@class='devsite-search-form']")
     WebElement searchButton;
@@ -30,7 +34,8 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
     public CloudGoogleDotComPageObject(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver,this);
-        currentUser= UserCreator.generateUserWithDefaultProperties();
+        currentUser= UserCreator.generateUserWithProperties();
+        googleCloud= CloudCreator.generateCloudWithProperties();
     }
     public CloudGoogleDotComPageObject submitSearchRequest(){
         searchButton.click();
@@ -62,7 +67,8 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         selectCalculatorFrame();
         //Number of instances: 4
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
-                .elementToBeClickable(By.xpath("//input[@id='input_63' and @name='quantity']"))).sendKeys("4");
+                .elementToBeClickable(By.xpath("//input[@id='input_63' and @name='quantity']")))
+                .sendKeys(googleCloud.getNumberOfInstancesLocator());
 
         //What are these instances for?: оставить пустым
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
@@ -78,7 +84,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.id("select_80"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
-                .elementToBeClickable(By.id("select_option_78"))).click();
+                .elementToBeClickable(googleCloud.getVmClassLocator())).click();
 
         //Instance type: n1
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
@@ -90,7 +96,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.id("select_90"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
-                .elementToBeClickable(By.xpath("//md-option[@value='CP-COMPUTEENGINE-VMIMAGE-N1-STANDARD-8']"))).click();
+                .elementToBeClickable(googleCloud.getInstanceTypeLocator())).click();
 
         //Выбрать Add GPUs
         WebElement addGPUCheckBox=new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
@@ -115,19 +121,19 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//md-select[contains(@aria-label,'Local SSD')]"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
-                .elementToBeClickable(By.id("select_option_381"))).click();
+                .elementToBeClickable(googleCloud.getLocalSSDLocator())).click();
 
         //Datacenter location: Frankfurt (europe-west3)
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//md-select[contains(@aria-label,'Datacenter')]"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
-                .elementToBeClickable(By.id("select_option_205"))).click();
+                .elementToBeClickable(googleCloud.getDataCenterLocationLocator())).click();
 
         //Committed usage: 1 Year
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(By.xpath("//md-select[contains(@aria-label,'Committed usage')]"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
-                .elementToBeClickable(By.id("select_option_97"))).click();
+                .elementToBeClickable(googleCloud.getCommittedUsageLocator())).click();
 
         return this;
     }
@@ -212,24 +218,52 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         driver.switchTo().window(tabs.get(1));
         return mailBoxWebPage.waitAndOpenInboxMail().getTotalEstimatedCost();
     }
-
-    public void closeWebPage(){
-        driver.quit();
+    public Boolean checkVMClass(){
+        System.out.println(getEstimateFormValues().get(1));
+        System.out.println(googleCloud.getVmClass());
+        return getEstimateFormValues().get(1).equalsIgnoreCase(googleCloud.getVmClass());
+    }
+    public Boolean checkInstanceType(){
+        System.out.println(getEstimateFormValues().get(2));
+        System.out.println(googleCloud.getInstanceType());
+        return getEstimateFormValues().get(2).equalsIgnoreCase(googleCloud.getInstanceType());
+    }
+    public Boolean checkRegion(){
+        System.out.println(getEstimateFormValues().get(3));
+        System.out.println(googleCloud.getDataCenterLocation());
+        return getEstimateFormValues().get(3).equalsIgnoreCase(googleCloud.getDataCenterLocation());
+    }
+    public Boolean checkLocalSSD(){
+        System.out.println(getEstimateFormValues().get(4));
+        System.out.println(googleCloud.getLocalSSD());
+        return getEstimateFormValues().get(4).equalsIgnoreCase(googleCloud.getLocalSSD());
+    }
+    public Boolean checkCommitmentTerm(){
+        System.out.println(getEstimateFormValues().get(5));
+        System.out.println(googleCloud.getCommittedUsage());
+        return getEstimateFormValues().get(5).equalsIgnoreCase(googleCloud.getCommittedUsage());
+    }
+    public Boolean checkEstimateFormFields(){
+        return checkVMClass()&checkInstanceType()&checkRegion()&checkLocalSSD()&checkCommitmentTerm();
     }
 
+
 //    public static void main(String[] args) {
-//        WebDriver driver=new ChromeDriver();
-//        System.out.println(new CloudGoogleDotComPageObject(driver)
+//        WebDriver localDriver=new ChromeDriver();
+////        localDriver.get(HOMEPAGE_URL);
+//        System.out.println(new CloudGoogleDotComPageObject(localDriver)
 //                .openPage()
 //                .submitSearchRequest()
 //                .openRequestedSearchResult()
 //                .fillEstimateFormFields()
 //                .submitAddToEstimate()
+//                .checkEstimateFormFields());
+
 //                .clickEmailEstimate()
 //                .generateTemporaryEmail()
 //                .fillEmailEstimateForm()
 //                .clickSendEmail()
-//                .getTotalEstimatedCostFromEmail());
+//                .getTotalEstimatedCostFromEmail();
 //        driver.quit();
 //    }
 }
