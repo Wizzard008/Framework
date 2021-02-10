@@ -1,6 +1,7 @@
 package com.epam.automation.Tests;
 
 import com.epam.automation.PageObject.CloudGoogleDotComPageObject;
+import com.epam.automation.driver.DriverSingleton;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +13,7 @@ public class CloudGoogleDotComEmailVerificationTest extends CommonConditions {
 
     @Test(description = "Test for https://cloud.google.com/")
     public  void checkMonthlyPaymentFromEmail() {
-        webPage=new CloudGoogleDotComPageObject(driver)
+        webPage=new CloudGoogleDotComPageObject()
                 .openPage()
                 .submitSearchRequest()
                 .openRequestedSearchResult()

@@ -12,7 +12,7 @@ public class CloudGoogleDotComTotalEstimateTest extends CommonConditions {
 
     @Test(description = "Test for https://cloud.google.com/")
     public  void checkMonthlyPaymentFromForm() {
-        webPage=new CloudGoogleDotComPageObject(driver)
+        webPage=new CloudGoogleDotComPageObject()
                 .openPage()
                 .submitSearchRequest()
                 .openRequestedSearchResult()

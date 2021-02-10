@@ -11,11 +11,6 @@ public class TenMinutesEmailDotComPageObject extends AbstractPage{
     private static final String HOMEPAGE_URL="https://10minutemail.com/";
     private final int MAILBOX_LIFE_CYCLE=10*60;
 
-    protected TenMinutesEmailDotComPageObject(WebDriver driver) {
-        super(driver);
-    }
-
-
     public TenMinutesEmailDotComPageObject openPage(){
         driver.get(HOMEPAGE_URL);
         return this;

@@ -5,7 +5,6 @@ import com.epam.automation.model.User;
 import com.epam.automation.service.CloudCreator;
 import com.epam.automation.service.UserCreator;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -31,8 +30,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
             "index_ad8ca20a6d1799e286a0c0839aeb86ca523afe927b04501d8ba77dc59e5b8523.frame']")
     WebElement iFrame;
 
-    public CloudGoogleDotComPageObject(WebDriver driver){
-        super(driver);
+    public CloudGoogleDotComPageObject(){
         PageFactory.initElements(driver,this);
         currentUser= UserCreator.generateUserWithProperties();
         googleCloud= CloudCreator.generateCloudWithProperties();
@@ -212,7 +210,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
         ((JavascriptExecutor)driver).executeScript("window.open()");
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
-        mailBoxWebPage=new TenMinutesEmailDotComPageObject(driver);
+        mailBoxWebPage=new TenMinutesEmailDotComPageObject();
         currentUser.setEmailAddress(mailBoxWebPage.openPage().getEmailAddress());
         driver.switchTo().window(tabs.get(0));
         selectCalculatorFrame();
@@ -247,24 +245,4 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
     public Boolean checkEstimateFormFields(){
         return checkVMClass()&checkInstanceType()&checkRegion()&checkLocalSSD()&checkCommitmentTerm();
     }
-
-
-//    public static void main(String[] args) {
-//        WebDriver localDriver=new ChromeDriver();
-////        localDriver.get(HOMEPAGE_URL);
-//        System.out.println(new CloudGoogleDotComPageObject(localDriver)
-//                .openPage()
-//                .submitSearchRequest()
-//                .openRequestedSearchResult()
-//                .fillEstimateFormFields()
-//                .submitAddToEstimate()
-//                .checkEstimateFormFields());
-
-//                .clickEmailEstimate()
-//                .generateTemporaryEmail()
-//                .fillEmailEstimateForm()
-//                .clickSendEmail()
-//                .getTotalEstimatedCostFromEmail();
-//        driver.quit();
-//    }
 }
