@@ -6,6 +6,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class  DriverSingleton {
 
@@ -14,30 +15,23 @@ public class  DriverSingleton {
     private DriverSingleton(){}
 
     public static WebDriver getDriver(){
-        if (driver==null){
-            String browserProperty = System.getProperty("browser");
-            if (browserProperty.equalsIgnoreCase("edge")){
-                WebDriverManager.edgedriver().setup();
-                driver = new EdgeDriver();
-            }else {
-                WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+        if (driver==null) {
+            switch (System.getProperty("browser")) {
+                case "edge": {
+                    WebDriverManager.edgedriver().setup();
+                    driver = new EdgeDriver();
+                }
+                break;
+                case "firefox": {
+                    WebDriverManager.firefoxdriver().setup();
+                    driver = new FirefoxDriver();
+                }
+                break;
+                default: {
+                    WebDriverManager.chromedriver().setup();
+                    driver = new ChromeDriver();
+                }
             }
-//            switch (System.getProperty("browser")){
-//                case "edge": {
-//                    logger.info("Setting up edge");
-//                    WebDriverManager.edgedriver().setup();
-//                    driver = new EdgeDriver();
-//                }
-//                case "chrome": {
-//                    logger.info(System.getProperty("Setting up chrome"));
-//                    WebDriverManager.chromedriver().setup();
-//                    driver = new ChromeDriver();
-//                }
-//                default: {
-//                    logger.info("Not valid property browser");
-//                }
-//            }
             driver.manage().window().maximize();
         }
         return driver;
