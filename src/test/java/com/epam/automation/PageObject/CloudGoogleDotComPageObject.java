@@ -84,7 +84,7 @@ public class CloudGoogleDotComPageObject extends AbstractPage{
                 .elementToBeClickable(By.id("select_80"))).click();
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
                 .elementToBeClickable(googleCloud.getVmClassLocator())).click();
-        logger.info("Number of instances set to: "+googleCloud.getNumberOfInstances());
+        logger.info(googleCloud.getVmClass());
 
         //Instance type: n1
         new WebDriverWait(driver,WAIT_TIMEOUT_SECONDS).until(ExpectedConditions
